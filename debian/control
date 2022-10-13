@@ -1,0 +1,32 @@
+Source: node-eslint-scope
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders:
+ Jonas Smedegaard <dr@jones.dk>,
+Build-Depends:
+ debhelper-compat (= 13),
+ mocha <!nocheck>,
+ node-chai <!nocheck>,
+ node-espree (>= 6) <!nocheck>,
+ node-esrecurse <!nocheck>,
+ node-estraverse <!nocheck>,
+ pandoc <!nodoc>,
+Standards-Version: 4.5.0
+Homepage: https://github.com/eslint/eslint-scope
+Vcs-Browser: https://salsa.debian.org/js-team/node-eslint-scope
+Vcs-Git: https://salsa.debian.org/js-team/node-eslint-scope.git
+Rules-Requires-Root: no
+
+Package: node-eslint-scope
+Architecture: all
+Depends:
+ nodejs,
+ node-esrecurse,
+ node-estraverse,
+ ${misc:Depends},
+Description: ECMAScript scope analyzer for ESLint
+ ESLint Scope is the ECMAScript (a.k.a. JavaScrip) scope analyzer
+ used in ESLint.
+ .
+ It is a fork of escope.

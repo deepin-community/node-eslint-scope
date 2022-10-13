@@ -1,0 +1,93 @@
+node-eslint-scope (5.1.1-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release(s)
+
+  [ Debian Janitor ]
+  * set upstream metadata fields:
+    Bug-Database Bug-Submit Repository Repository-Browse
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 14 Dec 2020 11:50:21 +0100
+
+node-eslint-scope (5.0.0-2) unstable; urgency=medium
+
+  * simplify source script copyright-chceck
+  * copyright: update coverage
+  * use debhelper compatibility level 13 (not 12)
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 21 Aug 2020 18:46:31 +0200
+
+node-eslint-scope (5.0.0-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * copyright: extend coverage
+  * drop patch cherry-picked upstream now applied
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 27 Mar 2020 22:16:56 +0100
+
+node-eslint-scope (4.0.3-6) unstable; urgency=medium
+
+  * add patch cherry-picked upstream to use espree 6;
+    re-enable tests related to espree;
+    closes: bug#954204, thanks to Pirate Praveen and Xavier Guimard
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 23 Mar 2020 13:57:21 +0100
+
+node-eslint-scope (4.0.3-5) unstable; urgency=medium
+
+  [ Xavier Guimard ]
+  * Update tests to check: drop tests incompatible with node-espree-6
+    (Closes: #952312)
+
+  [ Jonas Smedegaard ]
+  * declare compliance with Debian Policy 4.5.0
+  * use debhelper compatibility level 12 (not 9);
+    build-depend on debhelper-compat (not debhelper)
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 15 Mar 2020 12:48:57 +0100
+
+node-eslint-scope (4.0.3-4) unstable; urgency=medium
+
+  * fix autopkgtest include all dependencies
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 04 Dec 2019 21:25:53 +0100
+
+node-eslint-scope (4.0.3-3) unstable; urgency=medium
+
+  * fix clean generated docs
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 30 Nov 2019 10:37:00 +0100
+
+node-eslint-scope (4.0.3-2) unstable; urgency=medium
+
+  * Team upload.
+  * No-change source-only upload to allow testing migration.
+
+ -- Boyuan Yang <byang@debian.org>  Thu, 31 Oct 2019 12:28:25 -0400
+
+node-eslint-scope (4.0.3-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+
+  [ Jonas Smedegaard ]
+  * Update tests to check.
+  * Check testsuite in autopkgtests.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 23 Oct 2019 23:07:48 +0200
+
+node-eslint-scope (3.7.1-2) experimental; urgency=medium
+
+  * Simple rebuild to fix broken initial upload (pushed the wrong files).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 23 Oct 2019 18:58:32 +0200
+
+node-eslint-scope (3.7.1-1) experimental; urgency=low
+
+  * Initial release.
+    Closes: Bug#943341.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 23 Oct 2019 18:49:57 +0200

@@ -1,0 +1,42 @@
+#!/usr/bin/make -f
+
+# generate documentation unless nodoc requested
+ifeq (,$(filter nodoc,$(DEB_BUILD_OPTIONS)))
+DOCS = README.html README.txt
+CHANGELOGS = CHANGELOG.html CHANGELOG.txt
+endif
+
+MOCHA = mocha
+# normalize output with TAP where possible unless terse requested
+ifeq (,$(filter terse,$(DEB_BUILD_OPTIONS)))
+MOCHA += --reporter tap
+else
+MOCHA += --reporter dot --no-colors
+endif
+
+# Work around missing node module "typescript-eslint-parser"
+TEST_EXCLUDES += tests/typescript.js
+
+%:
+	dh $@
+
+%.html: %.md
+	pandoc --from gfm-raw_html --to html --standalone --output $@ $<
+
+%.txt: %.md
+	pandoc --from gfm-raw_html --to plain --output $@ $<
+
+override_dh_clean:
+	dh_clean -- $(DOCS) $(CHANGELOGS)
+
+override_dh_auto_build: $(DOCS) $(CHANGELOGS)
+
+override_dh_auto_test:
+	$(MOCHA) $(filter-out $(TEST_EXCLUDES),\
+		$(wildcard tests/*.js))
+
+override_dh_installdocs:
+	dh_installdocs --all -- $(DOCS)
+
+override_dh_installchangelogs:
+	dh_installchangelogs -- $(CHANGELOGS)
