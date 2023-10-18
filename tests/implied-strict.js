@@ -20,13 +20,13 @@
 //  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 //  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-"use strict";
 
 /* eslint-disable no-unused-expressions */
 
-const expect = require("chai").expect;
-const espree = require("./util/espree");
-const analyze = require("..").analyze;
+import { expect } from "chai";
+import espree from "./util/espree.js";
+import { getSupportedEcmaVersions } from "./util/ecma-version.js";
+import { analyze } from "../lib/index.js";
 
 describe("impliedStrict option", () => {
     it("ensures all user scopes are strict if ecmaVersion >= 5", () => {
@@ -38,25 +38,27 @@ describe("impliedStrict option", () => {
             }
         `);
 
-        const scopeManager = analyze(ast, { ecmaVersion: 5, impliedStrict: true });
+        getSupportedEcmaVersions({ min: 5 }).forEach(ecmaVersion => {
+            const scopeManager = analyze(ast, { ecmaVersion, impliedStrict: true });
 
-        expect(scopeManager.scopes).to.have.length(3);
+            expect(scopeManager.scopes).to.have.length(3);
 
-        let scope = scopeManager.scopes[0];
+            let scope = scopeManager.scopes[0];
 
-        expect(scope.type).to.be.equal("global");
-        expect(scope.block.type).to.be.equal("Program");
-        expect(scope.isStrict).to.be.true;
+            expect(scope.type).to.be.equal("global");
+            expect(scope.block.type).to.be.equal("Program");
+            expect(scope.isStrict).to.be.true;
 
-        scope = scopeManager.scopes[1];
-        expect(scope.type).to.be.equal("function");
-        expect(scope.block.type).to.be.equal("FunctionDeclaration");
-        expect(scope.isStrict).to.be.true;
+            scope = scopeManager.scopes[1];
+            expect(scope.type).to.be.equal("function");
+            expect(scope.block.type).to.be.equal("FunctionDeclaration");
+            expect(scope.isStrict).to.be.true;
 
-        scope = scopeManager.scopes[2];
-        expect(scope.type).to.be.equal("function");
-        expect(scope.block.type).to.be.equal("FunctionDeclaration");
-        expect(scope.isStrict).to.be.true;
+            scope = scopeManager.scopes[2];
+            expect(scope.type).to.be.equal("function");
+            expect(scope.block.type).to.be.equal("FunctionDeclaration");
+            expect(scope.isStrict).to.be.true;
+        });
     });
 
     it("ensures impliedStrict option is only effective when ecmaVersion option >= 5", () => {

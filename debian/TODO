@@ -1,2 +1,4 @@
-  * Check full testsuite when needed node module is in Debian:
+  * Check more of testsuite when needed node module is in Debian:
     typescript-eslint-parser
+  * Check more of testsuite when not failing:
+    Cannot find package 'chai' imported from .../tree/tests/arguments.js

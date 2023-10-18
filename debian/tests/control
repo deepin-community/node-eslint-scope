@@ -1,11 +1,13 @@
-Test-Command: node -e "require('eslint-scope');"
+Test-Command: cd / && node -e "require('eslint-scope');"
 Depends:
  node-eslint-scope,
 Restrictions: superficial
+Features: test-name=require
 
 Test-Command:
- sed -i -e 's,analyze = require("..").analyze;,analyze = require("eslint-scope").analyze;,' tests/*.js
- && find tests/*.js -not -name typescript.js -exec mocha --reporter tap '{}' +
+ cp -a /usr/share/nodejs/eslint-scope/dist .
+ && mocha --reporter tap 'tests/*.cjs'
+# && mocha --reporter tap --exclude typescript.js 'tests/*.js'
 Depends:
  mocha,
  node-chai,
@@ -13,3 +15,4 @@ Depends:
  node-espree,
  node-esrecurse,
  node-estraverse,
+Features: test-name=test-suite

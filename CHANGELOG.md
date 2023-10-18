@@ -1,3 +1,28 @@
+v7.1.1 - February 11, 2022
+
+* [`8938109`](https://github.com/eslint/eslint-scope/commit/89381090cef60d8d47aeba111e04f859e063ae41) chore: upgrade espree@9.3.1 eslint-visitor-keys@3.3.0 (#88) (Milos Djermanovic)
+* [`4e1d24c`](https://github.com/eslint/eslint-scope/commit/4e1d24ca4a747c14b37f059543cf08d1e1820b2d) fix: ignore `"use strict"` directives in ES3 (#87) (Milos Djermanovic)
+* [`ceb8bdd`](https://github.com/eslint/eslint-scope/commit/ceb8bdd2cc31f67255e37a961096f9e3320abac6) ci: use node v16 (#84) (Nitin Kumar)
+* [`62e147b`](https://github.com/eslint/eslint-scope/commit/62e147be60c1eb84a40c1918913755acbc2d3a3d) test: add tests with year-based `ecmaVersion` (#83) (Milos Djermanovic)
+
+v7.1.0 - November 20, 2021
+
+* [`d756f1e`](https://github.com/eslint/eslint-scope/commit/d756f1ea974093c3ed7121d17f858254036b9690) feat: Add sourceType:commonjs support (#81) (Nicholas C. Zakas)
+
+v7.0.0 - November 16, 2021
+
+* [`22a55c0`](https://github.com/eslint/eslint-scope/commit/22a55c01d1a28fd3ffd45c8818b49e65bd3e5005) feat!: support class static blocks (#80) (Milos Djermanovic)
+* [`4aafb61`](https://github.com/eslint/eslint-scope/commit/4aafb616212adc39af37064932da912bdc7d9226) build: upgrade eslint-release to v3.2.0 to support conventional commits (#79) (Milos Djermanovic)
+* [`263c762`](https://github.com/eslint/eslint-scope/commit/263c762432c5a3995e30fa814d02b0ed358b0e68) Build: add node v17 (#76) (唯然)
+
+v6.0.0 - July 23, 2021
+
+* [`4ee1d80`](https://github.com/eslint/eslint-scope/commit/4ee1d80ce7dab961d9a158bc664d781bb663b570) Fix: Ensure correct version in package (#73) (Nicholas C. Zakas)
+* [`82a7e6d`](https://github.com/eslint/eslint-scope/commit/82a7e6d9de8f4fca48e99779e9573dd46adbc18c) Breaking: Switch to ESM (fixes #70) (#71) (Brett Zamir)
+* [`0b4a5f1`](https://github.com/eslint/eslint-scope/commit/0b4a5f132fb65520eee31bcd166078656b6e158e) Update: support class fields (refs eslint/eslint#14343) (#69) (Toru Nagashima)
+* [`39f8cfc`](https://github.com/eslint/eslint-scope/commit/39f8cfc026d9b9b7c02e07368323350e74698f29) Chore: upgrade estraverse to version 5 (#68) (Rouven Weßling)
+* [`ae27ff3`](https://github.com/eslint/eslint-scope/commit/ae27ff3692ab13cf62075b8659f0e17dfa44acd1) Docs: Add range to espree options in README (fixes #66) (#67) (Alan Liang)
+
 v5.1.1 - September 12, 2020
 
 * [`9b528d7`](https://github.com/eslint/eslint-scope/commit/9b528d778c381718c12dabfb7f1c0e0dc6b36e49) Upgrade: esrecurse version to ^4.3.0 (#64) (Timofey Kachalov)

@@ -1,1 +1,2 @@
-package.json lib /usr/share/nodejs/eslint-scope
+package.json dist lib /usr/share/nodejs/eslint-scope
+Xtypes/package.json Xtypes/*.d.ts /usr/share/nodejs/@types/eslint-scope

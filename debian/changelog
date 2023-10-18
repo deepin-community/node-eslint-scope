@@ -1,3 +1,52 @@
+node-eslint-scope (7.1.1+~3.7.4-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release of embedded module @types/eslint-scope
+
+  [ Jonas Smedegaard ]
+  * declare compliance with Debian Policy 4.6.1
+  * update generating documentation;
+    build-depend on cmark-gfm (not pandoc)
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 04 Sep 2022 18:01:58 +0200
+
+node-eslint-scope (7.1.1+~3.7.3-3) unstable; urgency=medium
+
+  * Team upload
+  * Fix autopkgtest
+
+ -- Yadd <yadd@debian.org>  Wed, 16 Mar 2022 12:32:37 +0100
+
+node-eslint-scope (7.1.1+~3.7.3-2) unstable; urgency=medium
+
+  [ Yadd ]
+  * fix autopkgtest
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 15 Mar 2022 08:02:37 +0100
+
+node-eslint-scope (7.1.1+~3.7.3-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release(s)
+
+  [ Debian Janitor ]
+  * declare compliance with Debian Policy 4.6.0
+
+  [ Jonas Smedegaard ]
+  * embed and install Node.js module @types/eslint-scope;
+    provide virtual package node-types-eslint-scope;
+    build-depend on jq
+  * update build routines; build-depend on rollup
+  * update unit-test check, and add lint-check;
+    build-depend on eslint node-eslint-visitor-keys;
+    tighten build-dependency on node-espree
+  * update copyright info:
+    + use Reference field (not License-Reference);
+      tighten lintian overrides
+    + update coverage
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 28 Feb 2022 21:45:21 +0100
+
 node-eslint-scope (5.1.1-1) unstable; urgency=medium
 
   [ upstream ]
