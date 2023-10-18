@@ -6,4 +6,14 @@ opts=\
 filenamemangle=s/.*?(@ANY_VERSION@@ARCHIVE_EXT@)/@PACKAGE@-$1/,\
 dversionmangle=auto,repacksuffix=~dfsg \
 https://github.com/eslint/eslint-scope/tags \
-.*?@ANY_VERSION@@ARCHIVE_EXT@
+.*?@ANY_VERSION@@ARCHIVE_EXT@ group
+
+# NPM registry needed for node types (avoid if at all possible!)
+opts=\
+component=Xtypes,\
+searchmode=plain,\
+pgpmode=none,\
+filenamemangle=s/.*?-?(@ANY_VERSION@@ARCHIVE_EXT@)/@PACKAGE@-types-$1/,\
+dversionmangle=auto \
+https://registry.npmjs.org/@types/eslint-scope \
+https://registry.npmjs.org/@types/eslint-scope/-/eslint-scope-@ANY_VERSION@@ARCHIVE_EXT@ group

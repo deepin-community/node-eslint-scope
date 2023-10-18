@@ -45,21 +45,33 @@ Copyright: 2013, Yusuke Suzuki <utatane.tea@gmail.com>
 License: BSD-2-clause
  FIXME
 
-Files: CONTRIBUTING.md
- README.md
+Files: README.md
+ Xtypes/README.md
+ Xtypes/index.d.ts
  debian/TODO
+ debian/clean
  debian/control
+ debian/copyright-check
  debian/gbp.conf
  debian/install
  debian/rules
+ debian/salsa-ci.yml
  debian/source/format
+ debian/source/lintian-overrides
  debian/tests/control
  debian/upstream/metadata
  debian/watch
- package.json
+ lib/version.js
+ rollup.config.js
+ tests/class-fields.js
+ tests/class-static-blocks.js
+ tests/commonjs.cjs
  tests/export-star-as-ns-from-source.js
  tests/object-expression.js
  tests/typescript.js
+ tests/use-strict.js
+ tests/util/ecma-version.js
+ tools/update-version.js
 Copyright: NONE
 License: UNKNOWN
  FIXME
@@ -68,6 +80,12 @@ Files: tests/es6-default-parameters.js
  tests/get-declared-variables.js
  tests/references.js
 Copyright: 2015, Toru Nagashima
+License: BSD-2-clause
+ FIXME
+
+Files: CONTRIBUTING.md
+ package.json
+Copyright: NONE
 License: BSD-2-clause
  FIXME
 
@@ -80,8 +98,18 @@ License: BSD-2-clause
 
 Files: LICENSE
 Copyright: 2012-2013, Yusuke Suzuki (twitter: @Constellation) and other contributors.
-  JS Foundation and other contributors, https:js.foundation
+  JS Foundation and other contributors, https://js.foundation
 License: BSD-2-clause
+ FIXME
+
+Files: Xtypes/package.json
+Copyright: NONE
+License: Expat
+ FIXME
+
+Files: Xtypes/LICENSE
+Copyright: Microsoft Corporation.
+License: Expat
  FIXME
 
 Files: CHANGELOG.md
@@ -89,19 +117,8 @@ Copyright: (Nicholas C. Zakas)
 License: UNKNOWN
  FIXME
 
-Files: debian/copyright-check
-Copyright: --deb-machine --ignore '^(debian/(changelog|copyright(_hints)?))$' --lines 0 -- * > debian/copyright_hints
-License: UNKNOWN
- FIXME
-
-Files: debian/source/lintian-overrides
-Copyright: GPL-3+
-  gpl-3+
-License: UNKNOWN
- FIXME
-
 Files: Makefile.js
-Copyright: jQuery Foundation and other contributors, https:jquery.org/
+Copyright: jQuery Foundation and other contributors, https://jquery.org/
 License: UNKNOWN
  FIXME
 

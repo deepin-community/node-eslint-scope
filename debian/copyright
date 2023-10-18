@@ -2,19 +2,35 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: eslint-scope
 Upstream-Contact: https://github.com/eslint/eslint-scope/issues
 Source: https://github.com/eslint/eslint-scope/releases
+ https://registry.npmjs.org/@types/eslint-scope
 
 Files: *
 Copyright:
-  JS Foundation and other contributors <https://js.foundation/>
-  2013, Alex Seville <hi@alexanderseville.com>
-  2014, Thiago de Arruda <tpadilha84@gmail.com>
-  2015, Toru Nagashima <star.ctor@gmail.com>
-  2012-2016, Yusuke Suzuki (@Constellation) <utatane.tea@gmail.com>
+  2013       Alex Seville <hi@alexanderseville.com>
+             JS Foundation and other contributors
+ <https://js.foundation/>
+  2014       Thiago de Arruda <tpadilha84@gmail.com>
+  2015       Toru Nagashima <star.ctor@gmail.com>
+  2012-2016  Yusuke Suzuki (@Constellation) <utatane.tea@gmail.com>
 License: BSD-2-clause~HOLDER
+Reference:
+ package.json
+ LICENSE
 Comment:
  Copyright holder "JS Foundation" listed only in file <LICENSE>.
  JS Foundation assumed to hold copyright for contributions since 2016
  unless otherwise noted.
+
+Files:
+ Xtypes/*
+Copyright:
+  Microsoft Corporation
+License: Expat
+Reference:
+ Xtypes/package.json
+ Xtypes/LICENSE
+Comment:
+ Copyright holder assumed from file <Xtypes/LICENSE>.
 
 Files:
  Makefile.js
@@ -29,8 +45,8 @@ Comment:
 Files:
  debian/*
 Copyright:
-  2019-2020, Jonas Smedegaard <dr@jones.dk>
-  2019-2020, Purism SPC
+  2019-2022  Jonas Smedegaard <dr@jones.dk>
+  2019-2022  Purism SPC
 License-Grant:
  This program is free software;
  you can redistribute it and/or modify it
@@ -38,6 +54,7 @@ License-Grant:
  as published by the Free Software Foundation;
  either version 3, or (at your option) any later version.
 License: GPL-3+
+Reference: debian/copyright
 
 License: BSD-2-clause~HOLDER
  Redistribution and use in source and binary forms,
@@ -99,4 +116,4 @@ License: Expat
  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 License: GPL-3+
-License-Reference: /usr/share/common-licenses/GPL-3
+Reference: /usr/share/common-licenses/GPL-3

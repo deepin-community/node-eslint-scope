@@ -20,55 +20,57 @@
 //  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 //  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-"use strict";
 
 /* eslint-disable no-unused-expressions */
 
-const expect = require("chai").expect;
-const espree = require("./util/espree");
-const analyze = require("..").analyze;
+import { expect } from "chai";
+import espree from "./util/espree.js";
+import { getSupportedEcmaVersions } from "./util/ecma-version.js";
+import { analyze } from "../lib/index.js";
 
 describe("ES6 switch", () => {
     it("materialize scope", () => {
-        const ast = espree(`
-            switch (ok) {
-                case hello:
-                    let i = 20;
-                    i;
-                    break;
+        getSupportedEcmaVersions({ min: 6 }).forEach(ecmaVersion => {
+            const ast = espree(`
+                switch (ok) {
+                    case hello:
+                        let i = 20;
+                        i;
+                        break;
 
-                default:
-                    let test = 30;
-                    test;
-            }
-        `);
+                    default:
+                        let test = 30;
+                        test;
+                }
+            `);
 
-        const scopeManager = analyze(ast, { ecmaVersion: 6 });
+            const scopeManager = analyze(ast, { ecmaVersion });
 
-        expect(scopeManager.scopes).to.have.length(2);
+            expect(scopeManager.scopes).to.have.length(2);
 
-        let scope = scopeManager.scopes[0];
+            let scope = scopeManager.scopes[0];
 
-        expect(scope.type).to.be.equal("global");
-        expect(scope.block.type).to.be.equal("Program");
-        expect(scope.isStrict).to.be.false;
-        expect(scope.variables).to.have.length(0);
-        expect(scope.references).to.have.length(1);
-        expect(scope.references[0].identifier.name).to.be.equal("ok");
+            expect(scope.type).to.be.equal("global");
+            expect(scope.block.type).to.be.equal("Program");
+            expect(scope.isStrict).to.be.false;
+            expect(scope.variables).to.have.length(0);
+            expect(scope.references).to.have.length(1);
+            expect(scope.references[0].identifier.name).to.be.equal("ok");
 
-        scope = scopeManager.scopes[1];
-        expect(scope.type).to.be.equal("switch");
-        expect(scope.block.type).to.be.equal("SwitchStatement");
-        expect(scope.isStrict).to.be.false;
-        expect(scope.variables).to.have.length(2);
-        expect(scope.variables[0].name).to.be.equal("i");
-        expect(scope.variables[1].name).to.be.equal("test");
-        expect(scope.references).to.have.length(5);
-        expect(scope.references[0].identifier.name).to.be.equal("hello");
-        expect(scope.references[1].identifier.name).to.be.equal("i");
-        expect(scope.references[2].identifier.name).to.be.equal("i");
-        expect(scope.references[3].identifier.name).to.be.equal("test");
-        expect(scope.references[4].identifier.name).to.be.equal("test");
+            scope = scopeManager.scopes[1];
+            expect(scope.type).to.be.equal("switch");
+            expect(scope.block.type).to.be.equal("SwitchStatement");
+            expect(scope.isStrict).to.be.false;
+            expect(scope.variables).to.have.length(2);
+            expect(scope.variables[0].name).to.be.equal("i");
+            expect(scope.variables[1].name).to.be.equal("test");
+            expect(scope.references).to.have.length(5);
+            expect(scope.references[0].identifier.name).to.be.equal("hello");
+            expect(scope.references[1].identifier.name).to.be.equal("i");
+            expect(scope.references[2].identifier.name).to.be.equal("i");
+            expect(scope.references[3].identifier.name).to.be.equal("test");
+            expect(scope.references[4].identifier.name).to.be.equal("test");
+        });
     });
 });
 
